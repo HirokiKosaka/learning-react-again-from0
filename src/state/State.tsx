@@ -20,7 +20,6 @@ const State = () => {
         setTextColor({ color: "gold" });
     }
   }, [bgColor]);
-  console.log(bgColor);
   const changeWhite = () => {
     setBgcolor({ backgroundColor: "white" });
   };
@@ -35,9 +34,15 @@ const State = () => {
       <div style={bgColor}>
         <h1 style={textColor}>Title</h1>
         <p style={textColor}>Description</p>
-        <button onClick={changeWhite}>White</button>
-        <button onClick={cahngeBlack}>Brack</button>
-        <button onClick={cahngeBlue}>Blue</button>
+        {bgColor.backgroundColor !== "white" ? (
+          <button onClick={changeWhite}>White</button>
+        ) : null}
+        {bgColor.backgroundColor !== "black" ? (
+          <button onClick={cahngeBlack}>Brack</button>
+        ) : null}
+        {bgColor.backgroundColor !== "blue" ? (
+          <button onClick={cahngeBlue}>Blue</button>
+        ) : null}
       </div>
     </>
   );
