@@ -6,12 +6,19 @@ export const colorContext = createContext({
   bgColor: "green",
   setBgColor: (color: string) => {},
 });
+export const textContext = createContext({
+  text: "",
+  setText: (val: string) => {},
+});
 const ColorChanger = () => {
   const [bgColor, setBgColor] = useState("green");
+  const [text, setText] = useState("hello");
   return (
     <>
       <colorContext.Provider value={{ bgColor, setBgColor }}>
-        <BgColor />
+        <textContext.Provider value={{ text, setText }}>
+          <BgColor />
+        </textContext.Provider>
       </colorContext.Provider>
     </>
   );
