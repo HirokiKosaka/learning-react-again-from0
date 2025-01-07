@@ -1,12 +1,16 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import BgColor from "./BgColor";
 
 // Top of the component
-export const colorContext = createContext("green");
+export const colorContext = createContext({
+  bgColor: "green",
+  setBgColor: (color: string) => {},
+});
 const ColorChanger = () => {
+  const [bgColor, setBgColor] = useState("green");
   return (
     <>
-      <colorContext.Provider value="green">
+      <colorContext.Provider value={{ bgColor, setBgColor }}>
         <BgColor />
       </colorContext.Provider>
     </>

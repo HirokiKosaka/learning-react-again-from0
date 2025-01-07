@@ -1,14 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { colorContext } from "./ColorChanger";
 import { Link } from "react-router-dom";
 
 const BgColor = () => {
-  const theme = useContext(colorContext);
-  const [bgColor, setBgColor] = useState(theme);
+  const { bgColor, setBgColor } = useContext(colorContext);
   const changeBgColor = () => {
     setBgColor(bgColor === "green" ? "red" : "green");
   };
-  console.log(bgColor);
   return (
     <>
       <div style={{ backgroundColor: bgColor }}>
