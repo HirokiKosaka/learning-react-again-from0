@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 // stateを使用してページの背景色を切り替える実装
 // 背景色は白、黒、青の3色
@@ -35,6 +36,7 @@ const State = () => {
             )
         )}
       </div>
+      <Link to="/">Back to Top</Link>
     </>
   );
 };
