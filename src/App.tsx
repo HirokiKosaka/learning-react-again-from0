@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Home";
-import State from "./state/State";
+import State from "./bgColorChangerUsingState/State";
 
 function App() {
   return (
